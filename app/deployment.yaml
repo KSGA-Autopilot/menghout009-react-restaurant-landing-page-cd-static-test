@@ -1,0 +1,21 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: menghout009-react-restaurant-landing-page-deployment
+  labels:
+    app: menghout009-react-restaurant-landing-page
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: menghout009-react-restaurant-landing-page
+  template:
+    metadata:
+      labels:
+        app: menghout009-react-restaurant-landing-page
+    spec:
+      containers:
+        - name: menghout009-react-restaurant-landing-page
+          image: kshrdautopilot/menghout009-react-restaurant-landing-page
+          ports:
+            - containerPort: 3000
